@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.codeorbecoded</groupId>
+	<artifactId>mytwitter</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>My Twitter</name>
+	<url>http://codeorbecoded.net/mytwitter</url>
+
+	<description>Rails tutorial sample app developed using java technologies (spring, jpa, etc.)</description>
+	<organization>
+		<url>http://codeorbecoded.net/</url>
+		<name>#CodeOrBeCoded</name>
+	</organization>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring.version>4.0.4.RELEASE</spring.version>
+		<hibernate-version>4.3.1.Final</hibernate-version>
+		<mysql.version>5.1.30</mysql.version>
+	</properties>
+
+	<dependencies>
+		<!-- Provided by JEE 7 container-->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+			<scope>provided</scope>
+		</dependency>		
+	</dependencies>
+
+	<build>
+		<finalName>mytwitter</finalName>
+		<plugins>
+
+			<!-- Compile all .java files with debug information and no optimization -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<debug>true</debug>
+					<optimize>false</optimize>
+				</configuration>
+			</plugin>
+
+			<!-- Generate eclipse project with javadocs -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+
+</project>
