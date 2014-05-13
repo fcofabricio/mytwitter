@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib>
+	<tlibversion>1.2</tlibversion>
+	<jspversion>2.2</jspversion>
+	<shortname>MyTwitter</shortname>
+	<info>JSTL for MyTwitter.</info>
+	<tag>
+		<name>fullTitle</name>
+		<tagclass>net.codeorbecoded.mytwitter.helpers.FullTitleTag</tagclass>
+		<info>Full title for App.</info>
+		<attribute>
+			<name>pageTitle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib> 

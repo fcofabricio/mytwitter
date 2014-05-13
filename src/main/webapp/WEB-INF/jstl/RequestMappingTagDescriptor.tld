@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>RequestMapping</shortname>
+	<info>RequestMapping.</info>
+	<tag>
+		<name>pathTo</name>
+		<tagclass>net.codeorbecoded.mytwitter.helpers.RequestMappingTag</tagclass>
+		<info>Full title for App.</info>
+		<attribute>
+			<name>mappingName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib> 
