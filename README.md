@@ -6,7 +6,7 @@ MyTwitter Project
 Prerequisites
 -------------
 
-[Git], [Maven] and [OpenJDK 8 early access build 100 or later][JDK8 build]
+[Git](http://git-scm.com/), [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (I'm planning to change to openjdk early), [Maven](http://maven.apache.org/) and [PhantomJS](http://phantomjs.org/).
 
 Maven
 ------------------
@@ -18,3 +18,7 @@ To create Eclipse WTP project, run:
 To run the application on jetty, run:
 
 `mvn jetty:run-war`
+
+To test execution, run:
+
+`mvn verify`
