@@ -27,17 +27,6 @@
 		<junit.version>4.11</junit.version>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>spring-milestone</id>
-			<url>https://repo.spring.io/milestone</url>
-		</repository>
-		<repository>
-			<id>spring-snapshot</id>
-			<url>https://repo.spring.io/snapshot</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<!-- Provided by JEE 7 container -->
 		<dependency>
