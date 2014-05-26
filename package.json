@@ -1,0 +1,22 @@
+{
+  "name": "mytwitter",
+  "version": "0.0.1-SNAPSHOT",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-less": "^0.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fcofabricio/mytwitter.git"
+  },
+  "author": "Fabrício Lima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fcofabricio/mytwitter/issues"
+  },
+  "homepage": "https://github.com/fcofabricio/mytwitter"
+}
