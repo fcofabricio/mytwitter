@@ -1,44 +1,33 @@
 package net.codeorbecoded.mytwitter.model;
 
-import java.util.Calendar;
+import java.util.Date;
 
-import javax.persistence.Column;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Version;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.Version;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public abstract class AbstractEntity {
 	
 	@Id	@GeneratedValue
 	private long id;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(updatable = false)
-	private Calendar created;
+	@CreatedDate
+	private Date created;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Calendar modified;
+	@LastModifiedDate
+	private Date modified;
 	
 	@Version
 	private long version;
-	
-	@PrePersist
-	public void prePersist() {
-		setCreated(Calendar.getInstance());
-		setModified(Calendar.getInstance());
-	}
-	
-	@PreUpdate
-	public void preUpdate() {
-		setModified(Calendar.getInstance());
-	}
-	
+		
 	@Override
 	public String toString() {
 		return String.format("%s[$d]", getClass().getName(), getId());
@@ -69,19 +58,19 @@ public abstract class AbstractEntity {
 		this.id = id;
 	}
 
-	public Calendar getCreated() {
+	public Date getCreated() {
 		return created;
 	}
 
-	public void setCreated(Calendar created) {
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
-	public Calendar getModified() {
+	public Date getModified() {
 		return modified;
 	}
 
-	public void setModified(Calendar modified) {
+	public void setModified(Date modified) {
 		this.modified = modified;
 	}
 

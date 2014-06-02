@@ -2,8 +2,6 @@ package net.codeorbecoded.mytwitter.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
@@ -50,16 +48,6 @@ public class User extends AbstractEntity {
 		setPasswordConfirmation(passwordConfirmation);
 	}
 	
-	@PrePersist
-	public void prePersist() {
-		setEmail(getEmail().toLowerCase());
-	}
-	
-	@PreUpdate
-	public void preUpdate() {
-		prePersist();
-	}
-	
 	public boolean authenticate(String password) {
 		return BCrypt.checkpw(password, getPasswordDigest());
 	}
@@ -77,7 +65,7 @@ public class User extends AbstractEntity {
 	}
 	
 	public void setEmail(String email) {
-		this.email = email;
+		this.email = email.toLowerCase();
 	}
 
 	public String getPassword() {
